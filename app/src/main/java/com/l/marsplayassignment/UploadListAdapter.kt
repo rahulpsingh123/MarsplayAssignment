@@ -22,8 +22,7 @@ class UploadListAdapter(private val fragment: UploadListFragment) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val builder: Zoomy.Builder = Zoomy.Builder(fragment.activity).target(holder.itemView.image)
-        builder.register()
+        Zoomy.Builder(fragment.activity).target(holder.itemView.image).register()
 
         Picasso.with(fragment.activity)
             .load(mImageList[position]?.imageUrl)

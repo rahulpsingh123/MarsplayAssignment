@@ -62,8 +62,12 @@ dependencies {
 
     //javax annotations
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    //crop image
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    //zoom in or out
     implementation 'com.ablanco.zoomy:zoomy:1.1.0'
+
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     implementation 'com.google.firebase:firebase-database:19.2.1'
