@@ -2,16 +2,12 @@ package com.l.marsplayassignment.viewModel
 
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
-import io.reactivex.android.schedulers.AndroidSchedulers
-import okhttp3.MultipartBody
 import java.io.*
 
 class UploadViewModel : BaseViewModel() {
-    private val repo = UploadRepo()
     var state = MutableLiveData<ViewState>()
 
     enum class ViewState {
-        PICK_IMAGE,
         CROP_IMAGE,
         UPLOAD_IMAGE,
     }
@@ -50,16 +46,4 @@ class UploadViewModel : BaseViewModel() {
         }
     }
 
-    fun uploadImage(parts: MutableList<MultipartBody.Part?>) {
-        repo.uploadImage(parts)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-
-                }, {
-
-                })
-                .let { subscriptions.add(it) }
-
-
-    }
 }

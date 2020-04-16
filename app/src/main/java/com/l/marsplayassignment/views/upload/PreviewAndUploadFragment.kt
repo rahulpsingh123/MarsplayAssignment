@@ -3,7 +3,6 @@ package com.l.marsplayassignment.views.upload
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.l.marsplayassignment.MainActivity
+import com.l.marsplayassignment.views.MainActivity
 import com.l.marsplayassignment.R
 import com.l.marsplayassignment.helper.Utilities
 import com.l.marsplayassignment.helper.click
@@ -68,8 +67,7 @@ class PreviewAndUploadFragment : BaseFragment() {
                 fileReference.downloadUrl
                     .addOnSuccessListener { uri ->
                         val url = uri.toString()
-                        val filename: String = mImageUri.toString()
-                            .substring(mImageUri.toString().lastIndexOf("/") + 1)
+                        val filename: String = mImageUri.toString().substring(mImageUri.toString().lastIndexOf("/") + 1)
                         val upload = Image(filename, url)
                         val uploadId: String = mDatabaseRef?.push()?.key ?: ""
                         mDatabaseRef?.child(uploadId)?.setValue(upload)

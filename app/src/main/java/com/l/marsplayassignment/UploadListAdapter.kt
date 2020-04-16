@@ -1,4 +1,4 @@
-package com.l.marsplayassignment.views.upload
+package com.l.marsplayassignment
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ablanco.zoomy.Zoomy
 import com.google.firebase.database.DataSnapshot
-import com.l.marsplayassignment.R
 import com.l.marsplayassignment.model.Image
 import com.l.marsplayassignment.views.UploadListFragment
 import com.squareup.picasso.Picasso
@@ -17,7 +16,9 @@ class UploadListAdapter(private val fragment: UploadListFragment) : RecyclerView
     private val mImageList : MutableList<Image?> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_upload_list, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_upload_list, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

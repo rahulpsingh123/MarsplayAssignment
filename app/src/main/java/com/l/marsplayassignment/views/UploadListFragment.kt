@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
@@ -12,9 +11,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.l.marsplayassignment.R
 import com.l.marsplayassignment.helper.gone
 import com.l.marsplayassignment.helper.show
-import com.l.marsplayassignment.views.baseView.BaseActivity
 import com.l.marsplayassignment.views.baseView.BaseFragment
-import com.l.marsplayassignment.views.upload.UploadListAdapter
+import com.l.marsplayassignment.UploadListAdapter
 import kotlinx.android.synthetic.main.fragment_upload_list.*
 
 const val KEY ="image_uploads"

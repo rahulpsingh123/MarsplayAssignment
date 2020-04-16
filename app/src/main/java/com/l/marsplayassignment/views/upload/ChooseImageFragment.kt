@@ -1,10 +1,8 @@
 package com.l.marsplayassignment.views.upload
 
 import android.app.Activity.RESULT_OK
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.provider.DocumentsContract
@@ -14,20 +12,19 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProviders
 import com.l.marsplayassignment.R
-import com.l.marsplayassignment.helper.FileUtils
-import com.l.marsplayassignment.helper.Utilities
 import com.l.marsplayassignment.helper.Utilities.convertToFile
 import com.l.marsplayassignment.helper.click
 import com.l.marsplayassignment.viewModel.UploadViewModel
 import com.l.marsplayassignment.views.baseView.BaseFragment
-import com.otaliastudios.cameraview.*
+import com.otaliastudios.cameraview.CameraListener
+import com.otaliastudios.cameraview.CameraLogger
+import com.otaliastudios.cameraview.CameraOptions
+import com.otaliastudios.cameraview.PictureResult
 import com.otaliastudios.cameraview.controls.Facing
 import com.otaliastudios.cameraview.controls.Flash
 import com.otaliastudios.cameraview.controls.Mode
 import kotlinx.android.synthetic.main.fragment_choose_image.*
-import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
+import java.io.File
 
 
 class ChooseImageFragment : BaseFragment() {
@@ -80,21 +77,14 @@ class ChooseImageFragment : BaseFragment() {
     }
 
     private fun openImageIntent() {
-        val target = FileUtils.createGetContentIntent();
-        val intent = Intent.createChooser(target, getString(R.string.app_name))
-        try {
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            startActivityForResult(intent, FOLDER_IMAGE_REQUEST)
-        } catch (e: ActivityNotFoundException) {
-            // The reason for the existence of aFileChooser
-        }
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, FOLDER_IMAGE_REQUEST)
     }
 
 
     private fun capturePicture() {
-        if (camera.mode == Mode.VIDEO) {
-            return
-        }
         if (camera.isTakingPicture) return
         mCaptureTime = System.currentTimeMillis()
         camera.takePicture()
@@ -139,7 +129,6 @@ class ChooseImageFragment : BaseFragment() {
             camera.open()
         }
     }
-
 
     private inner class Listener : CameraListener() {
         override fun onCameraOpened(options: CameraOptions) {

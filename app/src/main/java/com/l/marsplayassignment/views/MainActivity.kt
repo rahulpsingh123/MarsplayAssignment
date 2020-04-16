@@ -1,12 +1,11 @@
-package com.l.marsplayassignment
+package com.l.marsplayassignment.views
 
 import android.content.Intent
 import android.os.Bundle
+import com.l.marsplayassignment.R
 import com.l.marsplayassignment.helper.click
-import com.l.marsplayassignment.views.UploadListFragment
 import com.l.marsplayassignment.views.baseView.BaseActivity
 import com.l.marsplayassignment.views.upload.ChooseImageActivity
-import com.l.marsplayassignment.views.upload.ChooseImageFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
