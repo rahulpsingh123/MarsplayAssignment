@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "389764288964",
+    "firebase_url": "https://yoga-475d9.firebaseio.com",
+    "project_id": "yoga-475d9",
+    "storage_bucket": "yoga-475d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389764288964:android:8fdfab848a127a26bd1491",
+        "android_client_info": {
+          "package_name": "com.l.marsplayassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389764288964-rbcld01ig8fs9o1fsskut21bju7f49ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfUMhQwNqxBvxSZQu9Eo81rvatXdsS58k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389764288964-rbcld01ig8fs9o1fsskut21bju7f49ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

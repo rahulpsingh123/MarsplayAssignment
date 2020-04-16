@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MarsplayAssignment</string>
+    <string name="text_upload">Upload</string>
+    <string name="text_preview">Preview and Upload</string>
+    <string name="text_crop">Crop Image</string>
+    <string name="empty_list">No data found please upload your look.</string>
+
+</resources>
