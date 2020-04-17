@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
         toolbar.setTitleTextColor(resources.getColor(android.R.color.white))
 
 
-        addFragment(UploadListFragment(), addToBackStack = false, transition = TRANSITION.NONE)
+        addFragment(UploadListFragment(), addToBackStack = false, replace = true, transition = TRANSITION.NONE)
 
         floating_button.click {
             startActivity(Intent(this, ChooseImageActivity::class.java))

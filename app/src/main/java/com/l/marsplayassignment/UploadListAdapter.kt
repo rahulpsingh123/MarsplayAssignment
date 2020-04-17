@@ -36,7 +36,7 @@ class UploadListAdapter(private val fragment: UploadListFragment) : RecyclerView
         mImageList.clear()
         for (snapshot in dataSnapshot.children) {
             val upload: Image? = snapshot.getValue(Image::class.java)
-            upload?.key = (snapshot.key)
+            upload?.key = snapshot.key
             mImageList.add(upload)
         }
         notifyDataSetChanged()
